@@ -1,0 +1,43 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        user:
+            entity: 
+                class: App\Entity\User
+                property: username
+            
+    encoders:
+        App\Entity\User: plaintext        
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        secured:
+            anonymous: true
+            pattern: ^/
+            provider: user
+            form_login:
+                username_parameter: username
+                password_parameter: password
+                login_path: /login
+                check_path: /login
+                default_target_path: /post
+            logout: 
+                path:   /logout
+                target: /            
+
+            # activate different ways to authenticate
+
+            # http_basic: true
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: true
+            # https://symfony.com/doc/current/security/form_login_setup.html
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+         - { path: ^/users, roles: ROLE_USER }
+         - { path: ^/post/.*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/post, roles: ROLE_USER }
+         - { path: ^/post/.*/.*, roles: ROLE_USER }

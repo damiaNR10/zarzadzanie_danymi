@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+    <main class="wrapper home-wrapper">
+        <div class="postslist">
+            <ul>
+                {% for post in posts %}
+                    <li class="post">
+                        <article>
+                            <div>
+                                <h2 class="postTitle">{{ post.title }}</h2>
+                                <p class="description"><i class="far fa-clock"></i>{{ post.date ? post.date|date('Y-m-d') : '' }}</p>
+                                <p class="description"><i class="fas fa-user"></i>{{ post.user.username }}</p>
+                            </div>
+                            <div>
+                                <img src="assets/img/obraz.png">
+                            </div>
+                            <div class="content">
+                                <p>{{ post.body|length > 250 ? post.body|slice(0,250) ~ '...': post.body }}</p>
+                                <a href="post/{{ post.id }}">CONTINUE READING</a>
+                            </div>
+                        </article>
+                    </li>
+                    {% else %}
+                    <li class="post">
+                        <article>
+                            <div>
+                                <h2 class="postTitle">Nothing to show</h2>
+                            </div>
+                        </article>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="info">
+            <div class="autor">
+                <div class="avatar">
+                    <img src="assets/img/avatar.png">
+                </div>
+
+                <h2>nickname</h2>
+                <a class="about_autor">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+            </div>
+
+        </div>
+    </main>
+{% endblock %}

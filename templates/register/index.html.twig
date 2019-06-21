@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+    <main class="wrapper">
+
+        <h2 class="login_title">PLEASE LOGIN TO CONTINUE</h2>
+        <form method="POST">
+            {#{{dump(error)}}#}
+
+            <div class="login">
+                <label>
+                    <a class="email">E-MAIL</a>
+                </label>
+                <input name="email">
+
+            </div>
+            <div class="login">
+                <label>
+                    <a>PASSWORD </a>
+                </label>
+                <input name="password" type="password">
+
+            </div>
+                    <div class="login">
+                <label>
+                    <a>PASSWORD </a>
+                </label>
+                <input name="password-confirm" type="password">
+
+            </div>
+            <div class="buttons">
+                <button class="registerButton">REGISTER</button>
+                {#<button class="loginButton">LOGIN</button>#}
+            </div>
+        </form>
+    </main>
+{% endblock %}

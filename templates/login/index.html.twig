@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+    <main class="wrapper login-wrapper">
+        <h2 class="login_title">PLEASE LOGIN TO CONTINUE</h2>
+        <form action="login" method="POST">
+            <div class="login">
+                <label for="username">E-mail</label>
+                <input name="username" id="username">
+
+            </div>
+            <div class="login">
+                <label for="password">Password</label>
+                <input name="password" type="password" id="password">
+
+            </div>
+            <div class="buttons">
+                <a class="registerButton" href="/register">Register</a>
+                <input type="submit" value="Login" class="loginButton">
+            </div>
+        </form>
+    </main>
+{% endblock %}

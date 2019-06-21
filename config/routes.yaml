@@ -1,0 +1,7 @@
+#index:
+#    path: /
+#    controller: App\Controller\BlogController::indexAction
+#
+#login:
+#    path: /login
+#    controller: App\Controller\LoginController::indexAction

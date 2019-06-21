@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main class="wrapper wrapper_post ">
+        {% include 'shared/aside.html.twig' %}
+        <div class="content new_post_content">
+            <h1 class="about_title">Edit Post</h1>
+
+            {{ include('post/_form.html.twig', {'button_label': 'Update', 'button_class': 'updateButton'}) }}
+
+            {{ include('post/_delete_form.html.twig') }}
+        </div>
+    </main>
+{% endblock %}

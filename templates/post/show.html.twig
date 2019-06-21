@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main class="wrapper">
+        <div class="content">
+            <div class="post_header">
+                <h2 class="post_title">{{ post.title }}</h2>
+                <p class="description inside-post"><i class="fas fa-user"></i>{{ post.user.username }}</p>
+                <p class="post_date">Date : <span>{{ post.date ? post.date|date('Y-m-d') : '' }}</span></p>
+            </div>
+            <div class="post_content">
+                {{ post.body|raw }}
+            </div>
+
+        </div>
+    </main>
+{% endblock %}
