@@ -15,10 +15,8 @@
                                 <p class="description"><i class="far fa-clock"></i>{{ post.date ? post.date|date('Y-m-d') : '' }}</p>
                                 <p class="description"><i class="fas fa-user"></i>{{ post.user.username }}</p>
                             </div>
-                            <div>
-                                <img src="assets/img/obraz.png">
-                            </div>
-                            <div class="content">
+
+                            <div class="content content-full">
                                 <p>{{ post.body|length > 250 ? post.body|slice(0,250) ~ '...': post.body }}</p>
                                 <a href="post/{{ post.id }}">CONTINUE READING</a>
                             </div>

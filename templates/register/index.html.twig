@@ -3,30 +3,23 @@
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-    <main class="wrapper">
+    <main class="wrapper register_wrapper">
 
         <h2 class="login_title">PLEASE LOGIN TO CONTINUE</h2>
         <form method="POST">
             {#{{dump(error)}}#}
 
             <div class="login">
-                <label>
-                    <a class="email">E-MAIL</a>
-                </label>
-                <input name="email">
-
+                <label>Username</label>
+                <input name="email" type="text">
             </div>
             <div class="login">
-                <label>
-                    <a>PASSWORD </a>
-                </label>
+                <label>Password</label>
                 <input name="password" type="password">
 
             </div>
                     <div class="login">
-                <label>
-                    <a>PASSWORD </a>
-                </label>
+                <label>Password</label>
                 <input name="password-confirm" type="password">
 
             </div>
